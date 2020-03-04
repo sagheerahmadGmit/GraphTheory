@@ -78,7 +78,7 @@ def shunt(infix):
     return ''.join(postfix)
 
 
-def regex_compile(regex):
+def regex_compile(infix):
     postfix = shunt(infix)
     postfix = list(postfix)[::-1]
 
@@ -122,7 +122,7 @@ def regex_compile(regex):
         else:
             #create new start and accept state
             accept = State()
-            start = State(label=c, edges[accept])
+            start = State(label=c, edges=[accept])
             #create new instance of fragment to represent the new nfa
             newfrag = Frag(start, accept)
 
@@ -134,13 +134,15 @@ def regex_compile(regex):
 
 
 def match(regex, s):
-	#this function will return true if and only if the regular expression
-	#regex (fully) matches the string s. It returns false otherwise
-	
-	#compile the regular expression into nfa
-	nfa = regex_compile(regex)
-	#ask the nfa if it matches the string s.
-	return nfa
+    #this function will return true if and only if the regular expression
+    #regex (fully) matches the string s. It returns false otherwise
+    
+    #compile the regular expression into nfa
+    nfa = regex_compile(regex)
+    #ask the nfa if it matches the string s.
+    return nfa
+    print(nfa)
+        
 	
 
 match("a.b|b*", "bbbbbbb")
