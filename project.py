@@ -141,8 +141,7 @@ def match(regex, s):
     nfa = regex_compile(regex)
     #ask the nfa if it matches the string s.
     return nfa
-    print(nfa)
         
 	
 
-match("a.b|b*", "bbbbbbb")
+print(match("a.b|b*", "bbbbbbb"))
