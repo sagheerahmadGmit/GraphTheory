@@ -73,10 +73,8 @@ def shunt(infix):
     while opers:
         postfix.append(opers.pop())
 
-
     #Convert output list to string
     return ''.join(postfix)
-
 
 def regex_compile(infix):
     postfix = shunt(infix)
@@ -135,11 +133,16 @@ def regex_compile(infix):
 
 #Add a state to the set and follow al the E arrows
 def followes(state, current):
-    #put the state itself into the state
-    current.add(state)
-    #See whether state is labelled be E
-    if state.label is None:
-        for x in state.edges
+    #only do something when we haven't already seen the state
+    if state not in current:
+        #put the state itself into the state
+        current.add(state)
+        #See whether state is labelled be E
+        if state.label is None:
+            #Loop through the states pointed to by this state
+            for x in state.edges:
+                #follow all of their epsilons too
+                followes(x, current)
 
 
 def match(regex, s):
@@ -151,7 +154,8 @@ def match(regex, s):
 
     # try to match the regular expression to the string s.
     #the current set of states
-    current = set(nfa.start)
+    current = set()
+    #add the first state, and follow all of epsilon arrows
     followes(nfa.start, current)
     #the previuos set of states
     previous = set()
@@ -160,7 +164,7 @@ def match(regex, s):
     for c in s:
         previous = current
         #creat a new empty set for states we're about to be in
-        previous = set()
+        current = set()
         #loop through the previous states
         for state in previous:
             #only follow arrows not labeled by E (epsilon)
@@ -168,12 +172,9 @@ def match(regex, s):
                 #if the label of the state is = to the character we've read
                 if state.label == c:
                     #add the state(s) at the end of the arrow to current.
-                    current.update(state.edges)
-
+                   followes(state.edges[0], current)
 
     #ask the nfa if it matches the string s.
-    return nfa.accept in current
-        
-	
+    return nfa.accept in current	
 
 print(match("a.b|b*", "bbbbbbb"))
