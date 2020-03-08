@@ -133,6 +133,15 @@ def regex_compile(infix):
     return nfa_stack.pop()
 
 
+#Add a state to the set and follow al the E arrows
+def followes(state, current):
+    #put the state itself into the state
+    current.add(state)
+    #See whether state is labelled be E
+    if state.label is None:
+        for x in state.edges
+
+
 def match(regex, s):
     #this function will return true if and only if the regular expression
     #regex (fully) matches the string s. It returns false otherwise
@@ -143,6 +152,7 @@ def match(regex, s):
     # try to match the regular expression to the string s.
     #the current set of states
     current = set(nfa.start)
+    followes(nfa.start, current)
     #the previuos set of states
     previous = set()
 
@@ -152,17 +162,17 @@ def match(regex, s):
         #creat a new empty set for states we're about to be in
         previous = set()
         #loop through the previous states
-        for s in previous:
+        for state in previous:
             #only follow arrows not labeled by E (epsilon)
-            if s.label is not None:
+            if state.label is not None:
                 #if the label of the state is = to the character we've read
-                if s.label == c:
+                if state.label == c:
                     #add the state(s) at the end of the arrow to current.
-                    current.update(s.edges)
+                    current.update(state.edges)
 
 
     #ask the nfa if it matches the string s.
-    return true
+    return nfa.accept in current
         
 	
 
