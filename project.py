@@ -139,8 +139,30 @@ def match(regex, s):
     
     #compile the regular expression into nfa
     nfa = regex_compile(regex)
+
+    # try to match the regular expression to the string s.
+    #the current set of states
+    current = set(nfa.start)
+    #the previuos set of states
+    previous = set()
+
+    #loop through characters in s
+    for c in s:
+        previous = current
+        #creat a new empty set for states we're about to be in
+        previous = set()
+        #loop through the previous states
+        for s in previous:
+            #only follow arrows not labeled by E (epsilon)
+            if s.label is not None:
+                #if the label of the state is = to the character we've read
+                if s.label == c:
+                    #add the state(s) at the end of the arrow to current.
+                    current.update(s.edges)
+
+
     #ask the nfa if it matches the string s.
-    return nfa
+    return true
         
 	
 
