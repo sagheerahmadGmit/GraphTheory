@@ -70,9 +70,14 @@ def shunt(infix):
     return ''.join(postfix)
 
 def regex_compile(infix):
+    """ Return an NFA fragment representing the infix regular expression """
+
+    #Convert infix expression into a postfix expression
     postfix = shunt(infix)
+    #Make the postfix expression a stack of characters
     postfix = list(postfix)[::-1]
 
+    #A stack for the NFA fragment
     nfa_stack = []
 
     while postfix:
@@ -88,16 +93,16 @@ def regex_compile(infix):
             start = State(edges=[frag.start, accept])
             #point the arrows
             frag.accept.edges = [frag.start,accept]
-            #create new instance of fragments to represent the new nfa
-            newfrag = Frag(start,accept)
         elif c == '.':
             #pop two fragments of the stack
             frag1 = nfa_stack.pop()
             frag2 = nfa_stack.pop()
             #point frag2's accept state at frag1's start state
             frag2.accept.edges.append(frag1.start)
-            #create new instance of fragment to represent the new nfa
-            newfrag = Frag(frag2.start, frag1.accept)
+            #Frag2 new start state
+            start = frag2.start
+            #frag1s new accept state
+            accept = frag1.accept
         elif c == '|':
             #pop 2 fragments of the stack
             frag1 = nfa_stack.pop()
@@ -108,15 +113,13 @@ def regex_compile(infix):
             #point the old accept state to the new one
             frag2.accept.edges.append(accept)
             frag1.accept.edges.append(accept)
-            #create new instance of fragment to represent the new nfa
-            newfrag = Frag(start, accept)
         else:
             #create new start and accept state
             accept = State()
             start = State(label=c, edges=[accept])
-            #create new instance of fragment to represent the new nfa
-            newfrag = Frag(start, accept)
 
+        #create new instance of fragments to represent the new nfa
+        newfrag = Frag(start, accept)
 	#push the new nfa to the nfa_stack
         nfa_stack.append(newfrag)
 
@@ -171,4 +174,4 @@ def match(regex, s):
     return nfa.accept in current	
 
 if __name__ == "__main__":
-    print(match("a.b|b*", "bbbbbbb"))
+    print(match("a.b|b*", "xbbbbbbb"))
