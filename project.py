@@ -175,3 +175,4 @@ def match(regex, s):
 
 if __name__ == "__main__":
     print(match("a.b|b*", "xbbbbbbb"))
+    print(match("b**", "bbbbbb"))
