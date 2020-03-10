@@ -1,42 +1,35 @@
 #Sagheer Ahmad
 # Classes used in Thompsons Construction
 
-class  State:
-	#Every state has 0, 1, or 2 edges from it
-    edges = []
-	
-	#label for the arrows, none means epsilon
-    label = None
-	
-    #Constructor for the class
-    # Constructor function
-    # Constructor is inside class state
+class  State:	
+    """ A state with one or two arrows, all arrows labeled by label """
+    #Constructor
     def __init__(self, label=None, edges=[]):
+        #Every state has 0,1, or 2 edges from it
         self.edges = edges
+        #label for the arrows, none means epsilon
         self.label = label
 
 # An NFA is represented by its initial and accept states.
 class Frag:
-	#start state of the NFA fragment
-    start = None
-	#Accept state of the NFA fragment
-    accept = None
-
-    # Constructor function
-    # Constructor is inside class nfa
+    """ An NFA fragment with a start and accept state """
+    # Constructor
     def __init__(self, start, accept):
+        #Start state of the NFA Fragment
         self.start = start
+        #Accept state of the NFA Fragment
         self.accept = accept
 		
 def shunt(infix):
-    
+    """ Return the infix regular expression in postfix """
+
     #Convert input to a stackish list
     infix = list(infix)[::-1]
 
-    #operator stack
+    #operator stack and the output list
     opers = []
 
-    #output list
+    #output list for regular expression
     postfix = []
 
     #Operator precedence
@@ -177,4 +170,5 @@ def match(regex, s):
     #ask the nfa if it matches the string s.
     return nfa.accept in current	
 
-print(match("a.b|b*", "bbbbbbb"))
+if __name__ == "__main__":
+    print(match("a.b|b*", "bbbbbbb"))
