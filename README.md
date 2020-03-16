@@ -9,7 +9,8 @@ The aim of the project is to write an application that will match the regular ex
 
 Context
 -------------------------------------------------------------------------------------------------------------------
--The following project has a real world problem that we may be asked to solve in our workplace or
+
+The following project has a real world problem that we may be asked to solve in our workplace or
 industry. We are not required to solve this problem from the top of our heads but we should be able toresearch and investigate the different methods that we could apply to the problem to solve it. There are many solutions already available and this is one of them.
 
 Structure
@@ -25,19 +26,26 @@ The Shunting yard algorithm is an algorthm that converts a infix regular express
 Once the regular expression is converted into postfix, It is then converted into a non-deterministic finite automaton. This is done by popping off fragments of the stack and creating new start and accept state for each of the special operators. 
 
 The postfix expression is then matched against a string to see if the string matches the given postfix expression.
- 
+
+How to run this program
+------------------------------------------------------------------------------------------------------------------
+
+1. Git clone this repository
+2. cd into GraphTheory
+3. run python3 project.py
+
 
 Research
 -------------------------------------------------------------------------------------------------------------------
 
-https://www.youtube.com/watch?v=RYNN-tb9WxI
+https://www.youtube.com/watch?v=RYNN-tb9WxI  
 Learning how to convert a regular expression to a NFA and then to a DFA.
 
-https://www.youtube.com/watch?v=Wz85Hiwi5MY
-https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+https://www.youtube.com/watch?v=Wz85Hiwi5MY  
+https://en.wikipedia.org/wiki/Shunting-yard_algorithm  
 Learning more about the shunting yard algorithm
 
-http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html
-A little more insight on reegular expressions
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html  
+A little more insight on reegular expressions  
 
 
