@@ -174,11 +174,12 @@ def match(regex, s):
     return nfa.accept in current	
 
 if __name__ == "__main__":
-    # testing our our infix expression's
+    # testing our infix expression's
     infixes = ["a.b|b*", "a.b.c*", "b**"]
     strings = ["bbb", "abc", "abbc", "abbbbb", "abccd"]
-
+    
+    #go through the infix list and match it with the string to see if they match
     for i in infixes:
         print()
         for s in strings:
-            print(match(i, s), i, s)
+            print("Infix: " + i, " String: " + s, " Match: ", match(i, s))
