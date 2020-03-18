@@ -30,24 +30,24 @@ The postfix expression is then matched against a string to see if the string mat
 Example output
 -----------------------------------------------------------------------------------------------------------------
 
-Infix: a.b|b*  String: bbb  Match:  True
-Infix: a.b|b*  String: abc  Match:  False
-Infix: a.b|b*  String: abbc  Match:  False
-Infix: a.b|b*  String: abbbbb  Match:  True
-Infix: a.b|b*  String: abccd  Match:  False
-
-Infix: a.b.c*  String: bbb  Match:  False
-Infix: a.b.c*  String: abc  Match:  True
-Infix: a.b.c*  String: abbc  Match:  True
-Infix: a.b.c*  String: abbbbb  Match:  True
-Infix: a.b.c*  String: abccd  Match:  False
-
-Infix: b**  String: bbb  Match:  True
-Infix: b**  String: abc  Match:  False
-Infix: b**  String: abbc  Match:  False
-Infix: b**  String: abbbbb  Match:  False
-Infix: b**  String: abccd  Match:  False
-
+Infix: a.b|b*  String: bbb  Match:  True  
+Infix: a.b|b*  String: abc  Match:  False  
+Infix: a.b|b*  String: abbc  Match:  False  
+Infix: a.b|b*  String: abbbbb  Match:  True  
+Infix: a.b|b*  String: abccd  Match:  False  
+  
+Infix: a.b.c*  String: bbb  Match:  False  
+Infix: a.b.c*  String: abc  Match:  True  
+Infix: a.b.c*  String: abbc  Match:  True  
+Infix: a.b.c*  String: abbbbb  Match:  True  
+Infix: a.b.c*  String: abccd  Match:  False  
+  
+Infix: b**  String: bbb  Match:  True  
+Infix: b**  String: abc  Match:  False  
+Infix: b**  String: abbc  Match:  False  
+Infix: b**  String: abbbbb  Match:  False  
+Infix: b**  String: abccd  Match:  False  
+  
 True meaning the expression does match and false meaning that the expression does nor match.
 
 How to run this program
