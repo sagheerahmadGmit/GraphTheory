@@ -27,6 +27,29 @@ Once the regular expression is converted into postfix, It is then converted into
 
 The postfix expression is then matched against a string to see if the string matches the given postfix expression.
 
+Example output
+-----------------------------------------------------------------------------------------------------------------
+
+Infix: a.b|b*  String: bbb  Match:  True
+Infix: a.b|b*  String: abc  Match:  False
+Infix: a.b|b*  String: abbc  Match:  False
+Infix: a.b|b*  String: abbbbb  Match:  True
+Infix: a.b|b*  String: abccd  Match:  False
+
+Infix: a.b.c*  String: bbb  Match:  False
+Infix: a.b.c*  String: abc  Match:  True
+Infix: a.b.c*  String: abbc  Match:  True
+Infix: a.b.c*  String: abbbbb  Match:  True
+Infix: a.b.c*  String: abccd  Match:  False
+
+Infix: b**  String: bbb  Match:  True
+Infix: b**  String: abc  Match:  False
+Infix: b**  String: abbc  Match:  False
+Infix: b**  String: abbbbb  Match:  False
+Infix: b**  String: abccd  Match:  False
+
+True meaning the expression does match and false meaning that the expression does nor match.
+
 How to run this program
 ------------------------------------------------------------------------------------------------------------------
 
@@ -46,6 +69,6 @@ https://en.wikipedia.org/wiki/Shunting-yard_algorithm
 Learning more about the shunting yard algorithm
 
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html  
-A little more insight on reegular expressions  
+A little more insight on regular expressions  
 
 
