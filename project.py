@@ -184,14 +184,17 @@ if __name__ == "__main__":
         for s in strings:
             print("Infix: " + i, " String: " + s, " Match: ", match(i, s))
 
+#Ask the user if they would like to match their own string and regular expression
 print()
 print("Would you like to test your own regular expression and String?")
 choice = input("Enter 1 for yes or 2 for no: ")
 
 print()
+#If yes then ask for the following input and match it
 if(choice == '1'):
     regex = input("Please enter the regular expression: ")
     string = input("Please enter the string to be matched: ")
-    print(match(regex, string))
+    print(regex, " == ", string, " :",  match(regex, string))
 else:
+    #else thank the user for using the program
     print("Thank you for using this program!!")
