@@ -13,6 +13,11 @@ Context
 The following project has a real world problem that we may be asked to solve in our workplace or
 industry. We are not required to solve this problem from the top of our heads but we should be able toresearch and investigate the different methods that we could apply to the problem to solve it. There are many solutions already available and this is one of them.
 
+
+1. Regular expressions are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters *+?()|, characters match themselves. To match a metacharacter, escape it with a backslash: \+ matches a literal plus character.
+
+2. Thompsons construction is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression a NFA is created. All those NFA are then put together into a single NFA which can be used to match a string.
+
 Structure
 -------------------------------------------------------------------------------------------------------------------
 
@@ -62,6 +67,7 @@ Research
 -------------------------------------------------------------------------------------------------------------------
 
 https://www.youtube.com/watch?v=RYNN-tb9WxI  
+http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html  
 Learning how to convert a regular expression to a NFA and then to a DFA.
 
 https://www.youtube.com/watch?v=Wz85Hiwi5MY  
@@ -71,4 +77,11 @@ Learning more about the shunting yard algorithm
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html  
 A little more insight on regular expressions  
 
+https://swtch.com/~rsc/regexp/regexp1.html  
+Regular Expression  
 
+https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/  
+Infix to Postfix  
+
+https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton  
+Nondeterministic finite automaton
