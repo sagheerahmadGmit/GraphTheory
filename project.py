@@ -1,13 +1,13 @@
 #Sagheer Ahmad
 # Classes used in Thompsons Construction
 
-class  State:	
-    """ A state with one or two arrows, all arrows labeled by label """
-    #Constructor
-    def __init__(self, label=None, edges=[]):
-        #Every state has 0,1, or 2 edges from it
-        self.edges = edges
-        #label for the arrows, none means epsilon
+class State:
+    """A state with one or two edges, all edges labelled by label."""
+    # Constructor.
+    def __init__(self, label=None, edges=None):
+        # Every state has 0, 1, or 2 edges from it.
+        self.edges = edges if edges else []
+        # Label for the arrows. None means epsilon.
         self.label = label
 
 # An NFA is represented by its initial and accept states.

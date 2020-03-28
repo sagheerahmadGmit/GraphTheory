@@ -18,6 +18,8 @@ industry. We are not required to solve this problem from the top of our heads bu
 
 2. Thompsons construction is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression a NFA is created. All those NFA are then put together into a single NFA which can be used to match a string.
 
+3. NFAs were introduced in 1959 by Michael O. Rabin and Dana Scott. They also showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings.
+
 Structure
 -------------------------------------------------------------------------------------------------------------------
 
@@ -58,9 +60,17 @@ True meaning the expression does match and false meaning that the expression doe
 How to run this program
 ------------------------------------------------------------------------------------------------------------------
 
-1. Git clone this repository
+1. Git clone this repository  
+
+git clone https://github.com/sagheerahmadGmit/GraphTheory 
+ 
 2. cd into GraphTheory
+
+cd GraphTheory/
+
 3. run python3 project.py
+
+python3 project.py
 
 
 Research
@@ -85,3 +95,6 @@ Infix to Postfix
 
 https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton  
 Nondeterministic finite automaton
+
+https://cs.lmu.edu/~ray/notes/regex/  
+Regular Expressions
