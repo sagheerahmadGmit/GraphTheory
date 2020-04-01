@@ -113,6 +113,32 @@ def regex_compile(infix):
             #point the old accept state to the new one
             frag2.accept.edges.append(accept)
             frag1.accept.edges.append(accept)
+        elif c == '?':
+            # Pop a single NFA from the stack
+            frag1 = nfa_stack.pop()
+            #create new start and accept state
+            start  = state()
+            accept = state()
+            #join the new  start state to the frag start start and then to the new accept state
+            start.edges = frag1.start
+            start.edges = accept
+            #join the old accept state to the new state
+            frag.accept.edges = accept
+            # Push the new NFA to the stack
+            nfa_stack.append(frag(initial, accept))
+        elif c == '+':
+             # Pop a single NFA from the stack
+            frag1 = nfa_stack.pop()
+            # Create new start and accept states
+            start = state()
+            accept = state()
+            # Join the new start state to the fragments start state
+            start.edges = frag1.start
+            # Join the old accept state to the new accept state and to fragments accept state
+            frag1.accept.edges = frag.start
+            frag1.accept.edges = accept
+            # Push the new NFA to the stack
+            nfa_stack.append(nfa(initial, accept))        
         else:
             #create new start and accept state
             accept = State()

@@ -14,7 +14,7 @@ The following project has a real world problem that we may be asked to solve in 
 industry. We are not required to solve this problem from the top of our heads but we should be able toresearch and investigate the different methods that we could apply to the problem to solve it. There are many solutions already available and this is one of them.
 
 
-1. Regular expressions are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters *+?()|, characters match themselves. To match a metacharacter, escape it with a backslash: \+ matches a literal plus character.
+1. Regular expressions are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters *+?()|, characters match themselves. To match a metacharacter, escape it with a backslash: \+ matches a literal plus character.	
 
 2. Thompsons construction is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression a NFA is created. All those NFA are then put together into a single NFA which can be used to match a string.
 
@@ -33,6 +33,23 @@ The Shunting yard algorithm is an algorthm that converts a infix regular express
 Once the regular expression is converted into postfix, It is then converted into a non-deterministic finite automaton. This is done by popping off fragments of the stack and creating new start and accept state for each of the special operators. 
 
 The postfix expression is then matched against a string to see if the string matches the given postfix expression.
+
+Special Characters
+----------------------------------------------------------------------------------------------------------------
+
+The following Special Characters are used within the program:
+
+* Kleene Star -  means a character appears 0 or more times.
+
+. concatenates two characters. So, a.b means a followed by a b.
+
+| means or. So, a|b means a or a b.
+
++ means a character appears 1 or more times.
+
+? means a character appears 0 or 1 time.
+
+() are used to group characters.
 
 Example output
 -----------------------------------------------------------------------------------------------------------------
