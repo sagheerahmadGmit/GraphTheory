@@ -39,13 +39,13 @@ Special Characters
 
 The following Special Characters are used within the program:
 
- - * Kleene Star -  means a character appears 0 or more times.
+ - (*) Kleene Star means a character appears 0 or more times.
 
  - . concatenates two characters. So, a.b means a followed by a b.
 
  - | means or. So, a|b means a or a b.
 
- - + means a character appears 1 or more times.
+ - (+) means a character appears 1 or more times.
 
  - ? means a character appears 0 or 1 time.
 
