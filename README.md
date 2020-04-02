@@ -39,17 +39,17 @@ Special Characters
 
 The following Special Characters are used within the program:
 
-* Kleene Star -  means a character appears 0 or more times.
+ - * Kleene Star -  means a character appears 0 or more times.
 
-. concatenates two characters. So, a.b means a followed by a b.
+ - . concatenates two characters. So, a.b means a followed by a b.
 
-| means or. So, a|b means a or a b.
+ - | means or. So, a|b means a or a b.
 
-+ means a character appears 1 or more times.
+ - + means a character appears 1 or more times.
 
-? means a character appears 0 or 1 time.
+ - ? means a character appears 0 or 1 time.
 
-() are used to group characters.
+ - () are used to group characters.
 
 Example output
 -----------------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ Infix: b**  String: abbc  Match:  False
 Infix: b**  String: abbbbb  Match:  False  
 Infix: b**  String: abccd  Match:  False  
   
-True meaning the expression does match and false meaning that the expression does nor match.
+True meaning the expression does match and false meaning that the expression does not match.
 
 How to run this program
 ------------------------------------------------------------------------------------------------------------------
