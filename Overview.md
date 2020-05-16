@@ -95,3 +95,31 @@ python3 test.py
 This is an example of a unittest:
 
 <img src="images/testing2.png">
+
+Research
+---------------------------------------------------------------------------------------------
+https://www.youtube.com/watch?v=RYNN-tb9WxI  
+http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html  
+Learning how to convert a regular expression to a NFA and then to a DFA.  
+  
+https://www.youtube.com/watch?v=Wz85Hiwi5MY  
+https://en.wikipedia.org/wiki/Shunting-yard_algorithm  
+Learning more about the shunting yard algorithm  
+  
+http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html  
+A little more insight on regular expressions  
+  
+https://swtch.com/~rsc/regexp/regexp1.html  
+Regular Expression  
+  
+https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/  
+Infix to Postfix  
+  
+https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton  
+Nondeterministic finite automaton  
+  
+https://cs.lmu.edu/~ray/notes/regex/  
+Regular Expressions  
+    
+https://regex101.com/  
+Test your own regular expressions  
