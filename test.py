@@ -1,7 +1,7 @@
 import unittest
 import project
 
-class KnownValues(unittest.TestCase):
+class TestProject(unittest.TestCase):
 
     def setUp(self):
         self.a = "a.b"
@@ -142,5 +142,6 @@ class KnownValues(unittest.TestCase):
         #the expected result
         expected = False
         self.assertEqual(expected, result)
+
 #run the tests
 unittest.main()
