@@ -42,7 +42,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
 
     
-   #Test the . operator
+   #Test the * operator
     def test_kleene_operator_false(self):
         #get the results of the function
         result = project.match(self.d, self.f)
@@ -51,7 +51,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
         
 
-    #Test the . operator
+    #Test the * operator
     def test_kleene_operator_true(self):
         #get the results of the function
         result = project.match(self.d, self.e)
@@ -59,7 +59,7 @@ class TestProject(unittest.TestCase):
         expected = True
         self.assertEqual(expected, result)  
 
-    #Test the . operator
+    #Test the | operator
     def test_or_operator_false(self):
         #get the results of the function
         result = project.match(self.g, self.i)
@@ -68,7 +68,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
         
 
-    #Test the . operator
+    #Test the | operator
     def test_or_operator_true(self):
         #get the results of the function
         result = project.match(self.g, self.h)
@@ -76,7 +76,7 @@ class TestProject(unittest.TestCase):
         expected = True
         self.assertEqual(expected, result)
 
-    #Test the . operator
+    #Test the + operator
     def test_plus_operator_false(self):
         #get the results of the function
         result = project.match(self.j, self.l)
@@ -85,7 +85,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
         
 
-    #Test the . operator
+    #Test the + operator
     def test_plus_operator_true(self):
         #get the results of the function
         result = project.match(self.j, self.k)
@@ -93,7 +93,7 @@ class TestProject(unittest.TestCase):
         expected = False
         self.assertEqual(expected, result)
     
-    #Test the . operator
+    #Test the ? operator
     def test_question_mark_operator_false(self):
         #get the results of the function
         result = project.match(self.m, self.o)
@@ -102,7 +102,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
         
 
-    #Test the . operator
+    #Test the ? operator
     def test_question_mark_operator_true(self):
         #get the results of the function
         result = project.match(self.m, self.n)
@@ -111,7 +111,7 @@ class TestProject(unittest.TestCase):
         self.assertEqual(expected, result)
 
 
-    #Test the . operator
+    #Test the regular expression
     def test_regex_example_true1(self):
         #get the results of the function
         result = project.match("a.b|b*", "bbb")
@@ -119,7 +119,7 @@ class TestProject(unittest.TestCase):
         expected = True
         self.assertEqual(expected, result)
     
-    #Test the . operator
+    #Test the regular expression
     def test_regex_example_false1(self):
         #get the results of the function
         result = project.match("a.b|b*", "bbcb")
@@ -127,7 +127,7 @@ class TestProject(unittest.TestCase):
         expected = False
         self.assertEqual(expected, result)
 
-    #Test the . operator
+    #Test the regular expression
     def test_regex_example_true2(self):
         #get the results of the function
         result = project.match("a.b.c", "abc")
@@ -135,7 +135,7 @@ class TestProject(unittest.TestCase):
         expected = True
         self.assertEqual(expected, result)
     
-    #Test the . operator
+    #Test the regular expression
     def test_regex_example_false1(self):
         #get the results of the function
         result = project.match("a.b.c*", "adfbc")

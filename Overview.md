@@ -13,12 +13,28 @@ The aim of the project was to write an application that will match the regular e
   
 
 The minimum requirement for the application was to accept a regular expression with the special characters ".", "|" and "*" and to match it against an input string. But it has also included the “+” and the “?” operators.  
-   
+ 
 The main parts of this program that we need to know are:  
 
 1.	Regular expressions: are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters “*”, “+”, “?”, “()”, “|”, these characters match themselves. To match a metacharacter, escape it with a backslash: + matches a literal plus character.
 2.	Thompsons construction: is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression, an NFA is created. All those NFAs are then put together into a single NFA which can be used to match a string.
-3.	NFAs: were introduced in 1959 by Michael O. Rabin and Dana Scott. They showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings.  
+3.	NFAs: were introduced in 1959 by Michael O. Rabin and Dana Scott. They showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings. 
+
+Structure
+----------------------------------------------------------------------------------------------------------
+
+There are 3 parts to this project:
+
+1. Using the Shunting Yard Algorithm to change a regular expression from infix to postfix.
+2. Create NFAs for each fragment in the regular expression and assemble them to a single NFA.
+3. Match the infix with a string.
+
+The Shunting yard algorithm is an algorthm that converts a infix regular expression to a postfix because its easier to use Thompsons' construction on a postfix regular expression.
+
+Once the regular expression is converted into postfix, It is then converted into a non-deterministic finite automaton. This is done by popping off fragments of the stack and creating new start and accept state for each of the special operators.
+
+The postfix expression is then matched against a string to see if the string matches the given postfix expression.
+
   
 Run
 -------------------------------------------------------------------------------------------------------
@@ -46,7 +62,36 @@ python3 project.py
 If you require more instructions on the program you can also run the following command
 
 ```
-python3 projectCommandLine.py
+python3 projectCommandLine.py --help
 ```
   
 When this program is run the user is presenetd with an option to either test their own regular expression or to exit the application. If the user chooses to test their own regular expression they will be asked to enter the infix expression and the string that will be compared.
+
+Test
+----------------------------------------------------------------------------------------------
+To test if the program works, there were two approaches taken:
+
+1. When the program is run, it shows the user some examples of the output and the infix and strings used. This was a hard coded version of the testing to see if 
+the program does what it is intended to do. This was done by creating two different arrayLists and populating them with the infix and string values. 
+A for loop is then setup to go through the arrayList and compare the infix to the string. The code can be seen in the image below.
+
+<img src="images/testing1.png">
+
+2. The second way the testing was done, was by using unittest. 
+	- Unittest is a unit testing framework that is very similar to Junit.
+	- Unit Testing is a level of software testing where individual components of a software is tested. 
+	  The purpose of this type of testing is to validate each unit of the program is working properly and 
+	  does what it is intended to do. It usually has very few inputs and usually a single output. 
+	  Because of this the testing can be more accurate.
+	- The unittest class was imported at the top of the test.py class and was used to create a test case that was used to test the project.py class.
+	- This way was a good idea because it tests each path of the code independently to any other part of the code.
+
+To run the unittest tests, use the following command:
+
+```
+python3 test.py
+```
+
+This is an example of a unittest:
+
+<img src="images/testing2.png">
