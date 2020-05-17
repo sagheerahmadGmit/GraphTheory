@@ -4,22 +4,27 @@ import project
 class TestProject(unittest.TestCase):
 
     def setUp(self):
+        #test values for the . operator
         self.a = "a.b"
         self.b = "ab"
         self.c = "bb"
-
+    
+        #test values for the * operator
         self.d = "b*"
         self.e = "bbb"
         self.f = "abc"
 
+        #test values for the | operator
         self.g = "a|b"
         self.h = "a"
         self.i = "abc"
-
+        
+        #test values for the + operator
         self.j = "ab+b"
         self.k = "ba"
         self.l = "ababc"
         
+        #test values for the ? operator
         self.m = "a?b"
         self.n = "abba"
         self.o = "abbca"
