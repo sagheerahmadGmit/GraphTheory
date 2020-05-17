@@ -16,7 +16,13 @@ The minimum requirement for the application was to accept a regular expression w
  
 The main parts of this program that we need to know are:  
 
-1.	Regular expressions: are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters “*”, “+”, “?”, “()”, “|”, these characters match themselves. To match a metacharacter, escape it with a backslash: + matches a literal plus character.
+1.	Regular expressions: are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters “*”, “+”, “?”, “()”, “|”, these characters match themselves. To match a metacharacter, escape it with a backslash.
+ 	- (*) Kleene Star means a character appears 0 or more times.
+ 	- . concatenates two characters. So, a.b means a followed by a b.
+ 	- | means or. So, a|b means a or a b.
+ 	- (+) means a character appears 1 or more times.
+ 	- ? means a character appears 0 or 1 time.
+ 	- () are used to group characters.
 2.	Thompsons construction: is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression, an NFA is created. All those NFAs are then put together into a single NFA which can be used to match a string. For more information on Thompson's Construction, please click [here](https://en.wikipedia.org/wiki/Thompson%27s_construction)
 3.	NFAs: were introduced in 1959 by Michael O. Rabin and Dana Scott. They showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings. They can have any number of arrows for each state and symbol. The empty string E (epsilon) is also used to label arrows that are used to label arrows that are followed without reading a character from the input, while also remaining in the orginal state. NFAs will recognise the same language as the regular expression.
 
