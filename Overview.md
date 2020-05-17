@@ -75,7 +75,7 @@ To test if the program works, there were two approaches taken:
 the program does what it is intended to do. This was done by creating two different arrayLists and populating them with the infix and string values. 
 A for loop is then setup to go through the arrayList and compare the infix to the string. The code can be seen in the image below.
 
-<img src="images/testing1.png">
+<img src="images/testing.jpg">
 
 2. The second way the testing was done, was by using unittest. 
 	- Unittest is a unit testing framework that is very similar to Junit.
@@ -94,7 +94,18 @@ python3 test.py
 
 This is an example of a unittest:
 
-<img src="images/testing2.png">
+<img src="images/testing2.jpg">
+
+This is an example of the output from the first testing approach:
+
+Infix: a.b|b* String: bbb Match: True
+Infix: a.b|b* String: abc Match: False
+
+Infix: a.b.c* String: bbb Match: False
+Infix: a.b.c* String: abc Match: True
+
+Infix: b** String: bbb Match: True
+Infix: b** String: abc Match: False
 
 Algorithm
 -----------------------------------------------------------------------------------------
@@ -104,8 +115,7 @@ The main algorithms that were used in this application were:
 regular expression into its smallest sub-expression. For every sub-expression a NFA is created. 
 All those NFA are then put together into a single NFA which can be used to match a string. 
 
-<img src="images/thompson.jpg">
-<img src="images/thompson2.jpg">
+<img src="images/thompson.jpg" width="300"> <img src="images/thompson2.jpg" width="300">
 
 2. Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expression that is passed as a parameter to postfix. Before converting 
 the expression into postfix, the infix is saved to a list and the precedence of the operators is set. For each character in the infix regular expression a while loop is executed.
@@ -118,8 +128,7 @@ is then read, it's precedence is checked and depending on the character, it gets
 in the postfix list. And for the closing bracket the if statement pops the operator stack until it find an open bracket and it gets rid of the open bracket.
 The postfix list is then converted to a string and the the postfix ends up looking like 'ab'. The infix regular expression is now ready for matching.
 
-<img src="images/shunting.jpg">
-
+<img src="images/shunting.jpg" width="300" class="center">
 
 Research
 ---------------------------------------------------------------------------------------------
