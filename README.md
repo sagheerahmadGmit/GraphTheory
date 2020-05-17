@@ -92,6 +92,16 @@ cd GraphTheory/
 python3 project.py
 ```
 
+In order to run the unittests use the following command
+```
+python3 test.py
+```
+
+For the command line arguments use the following command
+```
+python3 projectCommandLine.py --help
+```
+
 Research
 -------------------------------------------------------------------------------------------------------------------
 
