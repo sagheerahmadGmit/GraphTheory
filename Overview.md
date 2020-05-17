@@ -96,6 +96,31 @@ This is an example of a unittest:
 
 <img src="images/testing2.png">
 
+Algorithm
+-----------------------------------------------------------------------------------------
+The main algorithms that were used in this application were:
+
+1. Thompsons construction: This is the main algorithm used in this application and was developed by Ken Thompson in 1968. The algorithm splits a 
+regular expression into its smallest sub-expression. For every sub-expression a NFA is created. 
+All those NFA are then put together into a single NFA which can be used to match a string. 
+
+<img src="images/thompson.png">
+
+2. Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expression that is passed as a parameter to postfix. Before converting 
+the expression into postfix, the infix is saved to a list and the precedence of the operators is set. For each character in the infix regular expression a while loop is executed.
+The loop is executed one character at a time. Inside the while loop, the first thing that happens is that a character is popped off from the input.
+Inside the while there are also a few if statements that have different conditions depending on whether the character read is a round bracket, 
+a character or a previously declared special operator. For example if we have the infix Expression (a|b), the first character read will be the 
+'(' so, '(' will be pushed to the stack that was declared at the start of the function. The next character to be read would be 'a', which is 
+neither a round bracket or a special operator so it is just stored in postfix list declared at the top. The next character '|' which is a special operator 
+is then read, it's precedence is checked and depending on the character, it gets pushed to the stack. The next character 'b' is the same as 'a' and gets stored
+in the postfix list. And for the closing bracket the if statement pops the operator stack until it find an open bracket and it gets rid of the open bracket.
+The postfix list is then converted to a string and the the postfix ends up looking like 'ab'. The infix regular expression is now ready for matching.
+
+<img src="images/shunting.png">
+
+
+
 Research
 ---------------------------------------------------------------------------------------------
 https://www.youtube.com/watch?v=RYNN-tb9WxI  
@@ -106,20 +131,16 @@ https://www.youtube.com/watch?v=Wz85Hiwi5MY
 https://en.wikipedia.org/wiki/Shunting-yard_algorithm  
 Learning more about the shunting yard algorithm  
   
+https://swtch.com/~rsc/regexp/regexp1.html  
+https://cs.lmu.edu/~ray/notes/regex/  
 http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html  
 A little more insight on regular expressions  
   
-https://swtch.com/~rsc/regexp/regexp1.html  
-Regular Expression  
-  
 https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/  
-Infix to Postfix  
+Learning how to change a Infix notation to Postfix  
   
 https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton  
 Nondeterministic finite automaton  
   
-https://cs.lmu.edu/~ray/notes/regex/  
-Regular Expressions  
-    
 https://regex101.com/  
 Test your own regular expressions  
