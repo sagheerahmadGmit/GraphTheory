@@ -78,14 +78,19 @@ How to run this program
 ------------------------------------------------------------------------------------------------------------------
 
 1. Git clone this repository  
-  git clone https://github.com/sagheerahmadGmit/GraphTheory 
- 
+``` 
+git clone https://github.com/sagheerahmadGmit/GraphTheory 
+```
+
 2. cd into GraphTheory  
-  cd GraphTheory/
+``` 
+cd GraphTheory/
+```
 
 3. run python3 project.py  
-  python3 project.py
-
+```
+python3 project.py
+```
 
 Research
 -------------------------------------------------------------------------------------------------------------------

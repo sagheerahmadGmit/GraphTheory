@@ -17,8 +17,8 @@ The minimum requirement for the application was to accept a regular expression w
 The main parts of this program that we need to know are:  
 
 1.	Regular expressions: are a notation for describing sets of character strings. The simplest regular expression is a single literal character. Except for the special metacharacters “*”, “+”, “?”, “()”, “|”, these characters match themselves. To match a metacharacter, escape it with a backslash: + matches a literal plus character.
-2.	Thompsons construction: is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression, an NFA is created. All those NFAs are then put together into a single NFA which can be used to match a string.
-3.	NFAs: were introduced in 1959 by Michael O. Rabin and Dana Scott. They showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings. 
+2.	Thompsons construction: is an algorithm developed by Ken Thompson in 1968. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression, an NFA is created. All those NFAs are then put together into a single NFA which can be used to match a string. For more information on Thompson's Construction, please click [here](https://en.wikipedia.org/wiki/Thompson%27s_construction)
+3.	NFAs: were introduced in 1959 by Michael O. Rabin and Dana Scott. They showed NFA's equivalence to DFAs. NFAs are used in the implementation of regular expressions: Thompson's construction is an algorithm for compiling a regular expression to an NFA that can efficiently perform pattern matching on strings. They can have any number of arrows for each state and symbol. The empty string E (epsilon) is also used to label arrows that are used to label arrows that are followed without reading a character from the input, while also remaining in the orginal state. NFAs will recognise the same language as the regular expression.
 
 Structure
 ----------------------------------------------------------------------------------------------------------
@@ -104,7 +104,8 @@ The main algorithms that were used in this application were:
 regular expression into its smallest sub-expression. For every sub-expression a NFA is created. 
 All those NFA are then put together into a single NFA which can be used to match a string. 
 
-<img src="images/thompson.png">
+<img src="images/thompson.jpg">
+<img src="images/thompson2.jpg">
 
 2. Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expression that is passed as a parameter to postfix. Before converting 
 the expression into postfix, the infix is saved to a list and the precedence of the operators is set. For each character in the infix regular expression a while loop is executed.
@@ -117,8 +118,7 @@ is then read, it's precedence is checked and depending on the character, it gets
 in the postfix list. And for the closing bracket the if statement pops the operator stack until it find an open bracket and it gets rid of the open bracket.
 The postfix list is then converted to a string and the the postfix ends up looking like 'ab'. The infix regular expression is now ready for matching.
 
-<img src="images/shunting.png">
-
+<img src="images/shunting.jpg">
 
 
 Research
@@ -144,3 +144,9 @@ Nondeterministic finite automaton
   
 https://regex101.com/  
 Test your own regular expressions  
+  
+https://en.wikipedia.org/wiki/Thompson%27s_construction  
+More information on Thompsons Construction  
+  
+https://www.youtube.com/watch?v=cdblJqEUDNo  
+This was used to make the command line arguments
