@@ -98,26 +98,28 @@ This is an example of a unittest:
 
 This is an example of the output from the first testing approach:
 
-Infix: a.b|b* String: bbb Match: True
-Infix: a.b|b* String: abc Match: False
-
-Infix: a.b.c* String: bbb Match: False
-Infix: a.b.c* String: abc Match: True
-
-Infix: b** String: bbb Match: True
-Infix: b** String: abc Match: False
-
+Infix: a.b|b* String: bbb Match: True  
+Infix: a.b|b* String: abc Match: False  
+  
+Infix: a.b.c* String: bbb Match: False  
+Infix: a.b.c* String: abc Match: True  
+  
+Infix: b** String: bbb Match: True  
+Infix: b** String: abc Match: False  
+  
 Algorithm
 -----------------------------------------------------------------------------------------
 The main algorithms that were used in this application were:
 
-1. Thompsons construction: This is the main algorithm used in this application and was developed by Ken Thompson in 1968. The algorithm splits a 
-regular expression into its smallest sub-expression. For every sub-expression a NFA is created. 
-All those NFA are then put together into a single NFA which can be used to match a string. 
+### Thompson's Construction
+
+Thompsons construction: This is the main algorithm used in this application and was developed by Ken Thompson in 1968 for coverting a postfix regular expression into a non-deterministic automaton. Thompsons Construction turns strings into executable code that recognise the pattern defined by the regular expression. That code then can be executed against other strings to see if they match. The changing of regular expression into NFAs is known as compiling. The algorithm splits a regular expression into its smallest sub-expression. For every sub-expression a NFA is created. 
 
 <img src="images/thompson.jpg" width="300"> <img src="images/thompson2.jpg" width="300">
 
-2. Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expression that is passed as a parameter to postfix. Before converting 
+### Shunting Yard Algorithm
+
+Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expression that is passed as a parameter to postfix. Before converting 
 the expression into postfix, the infix is saved to a list and the precedence of the operators is set. For each character in the infix regular expression a while loop is executed.
 The loop is executed one character at a time. Inside the while loop, the first thing that happens is that a character is popped off from the input.
 Inside the while there are also a few if statements that have different conditions depending on whether the character read is a round bracket, 
