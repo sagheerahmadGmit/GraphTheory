@@ -112,6 +112,8 @@ Infix: a.b.c* String: abc Match: True
   
 Infix: b** String: bbb Match: True  
 Infix: b** String: abc Match: False  
+
+The Infix is the regular expression that will be compared against the string. The result shows if the regular expression matches the string or not. True meaning the expression does match and false meaning that the expression does not match. 
   
 Algorithm
 -----------------------------------------------------------------------------------------
