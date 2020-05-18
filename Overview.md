@@ -65,13 +65,19 @@ And finally run the program
 python3 project.py
 ```
 
+When this program is run the user is presenetd with an option to either test their own regular expression or to exit the application. If the user chooses to test their own regular expression they will be asked to enter the infix expression and the string that will be compared.
+
 If you require more instructions on the program you can also run the following command
 
 ```
 python3 projectCommandLine.py --help
 ```
-  
-When this program is run the user is presenetd with an option to either test their own regular expression or to exit the application. If the user chooses to test their own regular expression they will be asked to enter the infix expression and the string that will be compared.
+This command is used for the running the command line arguments. The --help shows all the available commands and their descriptions. 
+
+```
+python3 projectCommandLine.py --infix "a.b" --string "ab"
+```
+When this is run the file matches the given infix and string and gives the following output: Result: True
 
 Test
 ----------------------------------------------------------------------------------------------
@@ -131,7 +137,9 @@ Shunting Yard Algorithm: The shunt(infix) function is to convert the infix expre
 the expression into postfix, the infix is saved to a list and the precedence of the operators is set. For each character in the infix regular expression a while loop is executed.
 The loop is executed one character at a time. Inside the while loop, the first thing that happens is that a character is popped off from the input.
 Inside the while there are also a few if statements that have different conditions depending on whether the character read is a round bracket, 
-a character or a previously declared special operator. For example if we have the infix Expression (a|b), the first character read will be the 
+a character or a previously declared special operator.  
+  
+For example if we have the infix Expression (a|b), the first character read will be the 
 '(' so, '(' will be pushed to the stack that was declared at the start of the function. The next character to be read would be 'a', which is 
 neither a round bracket or a special operator so it is just stored in postfix list declared at the top. The next character '|' which is a special operator 
 is then read, it's precedence is checked and depending on the character, it gets pushed to the stack. The next character 'b' is the same as 'a' and gets stored
